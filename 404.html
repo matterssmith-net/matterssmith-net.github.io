@@ -21,17 +21,13 @@
   </style>
 </head>
 <body>
-  <button onClick="redirect1()">GO using href</button>
-  <button onClick="redirect2()">GO using replace</button>
-
-   <script>
-    const redirect1 = () => location.href = 'https://pablomonteserin.com';
-
-    const redirect2 = () => location.replace('https://pablomonteserin.com');
-  </script>
   <script>
     var pageTitle = document.getElementById("page-title");
-
+    location.replace('mattersmith.github.io/Index.html');
   </script>
+  <noscript>
+    var pageTitle = document.getElementById("page-title");
+    location.replace('mattersmith.github.io/Index.html');
+  </noscript>
 </body>
 </html>
