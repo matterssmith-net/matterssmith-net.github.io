@@ -37,6 +37,17 @@
       background-position: center;
     }
 
+    #texto::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            color: rgba(0, 0, 0, 0.2); /* Sombra ligera */
+        }
+
     .letra {
       font-size: 9.75vw;
       animation: animacionTexto 1.3s infinite;
@@ -110,7 +121,7 @@
 
   <div id="mensaje">
     <span id="texto1"></span>
-    <span id="texto2"></span>
+    <span id="texto2" data-text=texto 2></span>
     <span id="texto3"></span>
   </div>
 
