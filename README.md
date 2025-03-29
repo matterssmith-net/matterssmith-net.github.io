@@ -1,2 +1,2 @@
-# mattersmith-net.github.io
-Index
+# Index
+MatterSmith-net
