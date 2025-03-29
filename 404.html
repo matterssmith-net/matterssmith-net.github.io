@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="page-title"></title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100vh;      
+    }
+  </style>
+</head>
+<body>
+  <button onClick="redirect1()">GO using href</button>
+  <button onClick="redirect2()">GO using replace</button>
+
+   <script>
+    const redirect1 = () => location.href = 'https://pablomonteserin.com';
+
+    const redirect2 = () => location.replace('https://pablomonteserin.com');
+  </script>
+  <script>
+    var pageTitle = document.getElementById("page-title");
+
+  </script>
+</body>
+</html>
