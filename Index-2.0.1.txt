@@ -1,5 +1,17 @@
 
 
+    @keyframes animacionPuntos {
+      0%, 100% {
+        visibility: hidden;
+      }
+
+      50% {
+        visibility: visible;
+      }
+    }
+
+    /////////////////////////////////////////////////////
+
     // Variables modificables
     var identidad = "Neutro";
 
