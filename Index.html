@@ -21,7 +21,7 @@
       height: 100vh;      
     }
 
-    #texto {
+    #marca {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -37,7 +37,7 @@
       background-position: center;
     }
 
-    #texto::before {
+    #marca::before {
             content: attr(data-text);
             position: absolute;
             top: 0;
@@ -48,7 +48,7 @@
             color: rgba(0, 0, 0, 0.2); /* Sombra ligera */
         }
 
-    .letra {
+    .letraMarca {
       font-size: 9.75vw;
       animation: animacionTexto 1.8s infinite; /*animacionTexto 1.3s infinite*/
       animation-delay: calc(var(--delay) * 0.1s);
@@ -118,16 +118,28 @@
   </style>
 </head>
 <body>
-  <div id="texto"></div>
+  <div id="marca"></div>
 
   <div id="mensaje">
-    <span id="texto1"></span>
     <span id="texto2" data-text="texto2"></span>
-    <span id="texto3"></span>
   </div>
 
   <script>
     var pageTitle = document.getElementById("page-title");
+
+    var delayModificarTexto = (6500 / 2);
+
+    var texto = "© Network Live Mattersmith. MATTERCRAFT";
+
+    // Generar letras dinámicamente
+    var textoDiv = document.getElementById('marca');
+
+    function modificarTexto(texto) {
+      var texto = texto;
+      document.getElementById('texto').textContent = texto;
+    }
+
+    /////////////////////////////////////////////////////////
 
     // Variables modificables
     var identidad = "Neutro";
@@ -137,37 +149,9 @@
     var mostrarTexto2 = true;
     var mostrarTexto3 = true;
 
-    var delayModificarTexto = (6500 / 2);
-
-    var texto = "MATTERCRAFT";
-    var texto1 = "© Network Live Mattersmith.";
-    var texto2;
-
-    var texto3; /*texto3 = ". . ."*/
     var speedTexto3 = 400;
     var dotsTexto3 = [];
     var speedDotsTexto3 = 250;
-
-    // Generar letras dinámicamente
-    var textoDiv = document.getElementById('texto');
-    var texto1Span = document.getElementById('texto1');
-    var texto2Span = document.getElementById('texto2');
-    var texto3Span = document.getElementById('texto3');
-
-    function modificarTexto(texto) {
-      var texto = texto;
-      document.getElementById('texto').textContent = texto;
-    }
-    
-    function modificarTexto1(texto1) {
-      var texto1 = texto1;
-      document.getElementById('texto1').textContent = texto1;
-    }
-    
-    function modificarTexto2(texto2) {
-      var texto2 = texto2;
-      document.getElementById('texto2').textContent = texto2;
-    }
     
     function animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3) {
       var texto3Span = document.getElementById('texto3');
@@ -208,35 +192,6 @@
       animacionTexto3();
     }
 
-    function modificarTextoConsola() {
-      modificarTexto2("© Mattercraft [1.0.25.03]");
-    
-      modificarTexto3(". . .");
-
-    /*
-      setTimeout(function() {
-        location.reload();
-      }, (1600 * 10));
-    */
-
-    }
-    
-    document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById('page-title').textContent = texto;
-
-      modificarTextoConsola();
-    });
-
-    if (mostrarTexto) {
-      for (var i = 0; i < texto.length; i++) {
-        var letra = document.createElement("span");
-        letra.className = "letra";
-        letra.style.setProperty("--delay", i);
-        letra.textContent = texto[i];
-        textoDiv.appendChild(letra);
-      }
-    }
-
     if (mostrarTexto1) {
       var texto1Texto = document.createTextNode(texto1);
       texto1Span.appendChild(texto1Texto);
@@ -255,6 +210,26 @@
         }
       }
     }
+
+    /////////////////////////////////////////////////////////
+
+    function modificarTextoFinal() {
+      modificarTexto2("© Mattercraft [1.0.25.03]");
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('page-title').textContent = marca;
+
+      modificarTextoFinal();
+    });
+
+      for (var i = 0; i < texto.length; i++) {
+        var letra = document.createElement("span");
+        letraMarca.className = "letraMarca";
+        letraMarca.style.setProperty("--delay", i);
+        letraMarca.textContent = texto[i];
+        textoDiv.appendChild(letraMarca);
+      }
 
     function AjustarTamanoTexto() {
       var textoDiv = document.getElementById('texto');
