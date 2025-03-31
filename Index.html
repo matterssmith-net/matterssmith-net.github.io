@@ -98,22 +98,13 @@
       }
     }
 
-    @keyframes animacionPuntos {
-      0%, 100% {
-        visibility: hidden;
-      }
-
-      50% {
-        visibility: visible;
-      }
-    }
   </style>
 </head>
 <body>
   <div id="marca"></div>
 
   <div id="mensaje">
-    <span id="texto2" data-text="texto2"></span>
+    <span id="texto" data-text="texto"></span>
   </div>
 
   <script>
@@ -136,7 +127,7 @@
     /////////////////////////////////////////////////////////
 
     function modificarTextoFinal() {
-      modificarTexto2("© Mattercraft [1.0.25.03]");
+      modificarTexto("© Mattercraft [1.0.25.03]");
     }
     
     document.addEventListener("DOMContentLoaded", function() {
@@ -146,7 +137,7 @@
     });
 
       for (var i = 0; i < texto.length; i++) {
-        var letra = document.createElement("span");
+        var letraMarca = document.createElement("span");
         letraMarca.className = "letraMarca";
         letraMarca.style.setProperty("--delay", i);
         letraMarca.textContent = texto[i];
@@ -154,7 +145,7 @@
       }
 
     function AjustarTamanoTexto() {
-      var textoDiv = document.getElementById('texto');
+      var textoDiv = document.getElementById('marca');
       var vw = window.innerWidth / 100;
       textoDiv.style.fontSize = vw + 'vw';
 
