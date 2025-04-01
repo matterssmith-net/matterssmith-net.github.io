@@ -42,7 +42,7 @@
 
     .letra {
       font-size: 9.75vw;
-      animation: animacionTexto 1.8s infinite, /*1.3s*/ animarDegradado 6s infinite alternate;
+      animation: animacionTexto 1.8s infinite, /*1.3s*/ animarDegradado 6s infinite linear, cambiarColores 10s infinite linear;
       animation-delay: calc(var(--delay) * 0.1s);
       animation-timing-function: ease-in-out;
       transform: translateY(0%);
@@ -50,6 +50,7 @@
       font-weight: bold;
       color: transparent;
       background-position: center;
+      background-blend-mode: overlay;
       background: linear-gradient(45deg, hsl(0, 100%, 50%), hsl(60, 100%, 50%), hsl(120, 100%, 50%), hsl(180, 100%, 50%), hsl(240, 100%, 50%), hsl(300, 100%, 50%)), url('/sources/media/wallpaper.svg');
       /* background-image: url('/sources/media/wallpaper.svg'); */
       background-size: cover; /*200% 200%*/
