@@ -42,8 +42,7 @@
 
     .letra {
       font-size: 9.75vw;
-      animation: animacionTexto animarDegradado 1.8s infinite; /*animacionTexto 1.3s infinite*/
-      /* animation: animarDegradado 6s infinite alternate; */
+      animation: animacionTexto 1.8s infinite, /*1.3s*/ animarDegradado 6s infinite alternate;
       animation-delay: calc(var(--delay) * 0.1s);
       animation-timing-function: ease-in-out;
       transform: translateY(0%);
