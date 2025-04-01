@@ -22,6 +22,25 @@
       height: 100vh;      
     }
 
+    #container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+        
+    .divider {
+      position: absolute;
+      width: 185px;
+      height: 185px;
+      border-radius: 50%;
+      background-image: url("/sources/media/logotype.svg");
+      background-size: cover;
+      background-position: center;
+    }
+
     #texto {
       position: absolute;
       display: flex;
@@ -31,15 +50,15 @@
     }
 
     #texto::before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            color: rgba(0, 0, 0, 0.2); /* Sombra ligera */
-        }
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      color: rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    }
 
     .letra {
       font-size: 6.50vw; /*9.75vw*/
@@ -75,24 +94,6 @@
       font-weight: bold;
     }
 
-    #texto1 {
-      color: green;
-      margin-right: 0.5vw;
-    }
-
-    #texto2 {
-      color: rgb(159,31,239);
-      margin-right: 0.5vw;
-    }
-
-    #texto3 {
-    color: red;
-    visibility: hidden;
-    display: flex;
-    animation: animacionPuntos 20s steps(20, end) infinite;
-    animation-delay: calc(var(--delay) * 0.5s);
-  }
-
   .title {
     margin-top: 50px;
   }
@@ -100,16 +101,6 @@
   .title button {
     background-color: rgb(191, 255, 191);
     color: black;
-  }
-        
-  .divider {
-    position: absolute;
-    width: 185px;
-    height: 185px;
-    border-radius: 50%;
-    background-image: url("/sources/media/logotype.svg");
-    background-size: cover;
-    background-position: center;
   }
 
     @keyframes animacionTexto {
@@ -146,12 +137,14 @@
   </style>
 </head>
 <body>
-  <div class="divider"></div>
+  <div id="container">
+    <div class="divider"></div>
+  </div>
 
   <div id="texto"></div>
 
   <div id="mensaje">
-  </div>
+</div>
 
   <script>
     var pageTitle = document.getElementById("page-title");
@@ -160,40 +153,20 @@
     var identidad = "Neutro";
 
     var mostrarTexto = true;
-    var mostrarTexto1 = true;
-    var mostrarTexto2 = true;
-    var mostrarTexto3 = true;
-
     var delayModificarTexto = (6500 / 2);
 
     var texto = "MATTERCRAFT";
-    var texto1 = "© Network Live Mattersmith.";
-    var texto2;
 
-    var texto3; /*texto3 = ". . ."*/
     var speedTexto3 = 400;
     var dotsTexto3 = [];
     var speedDotsTexto3 = 250;
 
     // Generar letras dinámicamente
     var textoDiv = document.getElementById('texto');
-    var texto1Span = document.getElementById('texto1');
-    var texto2Span = document.getElementById('texto2');
-    var texto3Span = document.getElementById('texto3');
 
     function modificarTexto(texto) {
       var texto = texto;
       document.getElementById('texto').textContent = texto;
-    }
-    
-    function modificarTexto1(texto1) {
-      var texto1 = texto1;
-      document.getElementById('texto1').textContent = texto1;
-    }
-    
-    function modificarTexto2(texto2) {
-      var texto2 = texto2;
-      document.getElementById('texto2').textContent = texto2;
     }
     
     function animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3) {
@@ -217,24 +190,6 @@
       animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3);
     }
 
-    function modificarTexto3(texto3) {
-      var texto3 = texto3;
-      document.getElementById('texto3').textContent = texto3;
-      
-      function animacionTexto3() {
-        if (mostrarTexto3) {
-          for (var k = 1; k <= texto3.length; k++) {
-            dotsTexto3.push(texto3.substr(0, k));
-          }
-          dotsTexto3.push('');
-
-          animateDotsTexto3(speedTexto3, dotsTexto3);
-        }
-
-      }
-      animacionTexto3();
-    }
-
     function modificarTextoConsola() {
       modificarTexto2("© Mattercraft [1.0.25.04]");
     
@@ -254,25 +209,6 @@
         letra.style.setProperty("--delay", i);
         letra.textContent = texto[i];
         textoDiv.appendChild(letra);
-      }
-    }
-
-    if (mostrarTexto1) {
-      var texto1Texto = document.createTextNode(texto1);
-      texto1Span.appendChild(texto1Texto);
-    }
-
-    if (mostrarTexto2) {
-      for (var j = 0; j < texto2.length; j++) {
-        var palabra = document.createElement("span");
-        palabra.textContent = texto2[j];
-        texto2Span.appendChild(palabra);
-
-        if (j !== texto2.length - 1) {
-          var espacio = document.createElement("span");
-          espacio.textContent = " ";
-          texto2Span.appendChild(espacio);
-        }
       }
     }
 
