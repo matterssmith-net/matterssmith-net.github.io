@@ -227,12 +227,10 @@
       modificarTexto2("© Mattercraft [1.0.25.03]");
     
       modificarTexto3(". . .");
-
-    /*
+    
       setTimeout(function() {
         location.reload();
-      }, (1600 * 10));
-    */
+      }, (300 * 10));
 
     }
     
@@ -278,11 +276,6 @@
 
       var mensaje = document.getElementById('mensaje');
       mensaje.style.fontSize = (vw * 0.2) + 'vw';
-    }
-
-    setTimeout(function() {
-        location.reload();
-      }, (30 * 10));
 
     window.addEventListener('resize', AjustarTamanoTexto);
     AjustarTamanoTexto();
