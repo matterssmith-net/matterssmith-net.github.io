@@ -23,19 +23,18 @@
 
     #texto {
       position: absolute;
+      display: flex;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
       font-family: Arial, sans-serif;
-      display: flex;
+      font-weight: bold;
+      color: transparent;
+      background-position: center;
       background: linear-gradient(90deg, red, blue, purple);
-      background-image: url('/sources/media/wallpaper.svg');
       background-size: cover;
       background-clip: text;
       -webkit-background-clip: text;
-      color: rgb(127,127,127); /*color: transparent;*/
-      font-weight: bold;
-      background-position: center;
+      transform: translate(-50%, -50%);
     }
 
     #texto::before {
