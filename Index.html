@@ -120,7 +120,8 @@
 
    @keyframes cambiarColores {
       0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
+      50% { filter: hue-rotate(360deg); }
+      100% { filter: hue-rotate(0deg); } /* Regresa al inicio para un bucle suave */
     }
 
     @keyframes animacionPuntos {
