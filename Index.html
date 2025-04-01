@@ -279,7 +279,11 @@
       var mensaje = document.getElementById('mensaje');
       mensaje.style.fontSize = (vw * 0.2) + 'vw';
     }
-    
+
+    setTimeout(function() {
+        location.reload();
+      }, (60 * 1000));
+
     window.addEventListener('resize', AjustarTamanoTexto);
     AjustarTamanoTexto();
   </script>
