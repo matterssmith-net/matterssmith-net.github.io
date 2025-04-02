@@ -22,30 +22,35 @@
       height: 100vh;      
     }
 
-/* ///////////////////////////////////////////////////////////// */
-/*                           LOGOTYPE                            */
-/* ///////////////////////////////////////////////////////////// */
-                                                               /**/
-    #container {                                               /**/
-      position: relative;                                      /**/
-      width: 100vw;                                            /**/
-      height: 100vh;                                           /**/
-      display: flex;                                           /**/
-      align-items: center;                                     /**/
-      justify-content: center;                                 /**/
-    }                                                          /**/
-                                                               /**/
-    .divider {                                                 /**/
-      position: absolute;                                      /**/
-      z-index: -1;                                             /**/
-      width: 100%; /*185px*/                                   /**/
-      height: 100%; /*185px*/                                  /**/
-      border-radius: 50%;                                      /**/
-      background-image: url("/sources/media/logotype.svg");    /**/
-      background-size: cover;                                  /**/
-      background-position: center;                             /**/
-    }                                                          /**/
-                                                               /**/
+/* /////////////////////////////////////////////////////////////////////////////// */
+/*                                    LOGOTYPE                                     */
+/* /////////////////////////////////////////////////////////////////////////////// */
+                                                                                 /**/
+    #container {                                                                 /**/
+      width: 100vw;                                                              /**/
+      height: 100vh;                                                             /**/
+      display: flex;                                                             /**/
+      flex-direction: column; /* Acomoda los elementos en columna */             /**/ 
+      align-items: center;                                                       /**/
+      justify-content: center;                                                   /**/
+      position: relative;                                                        /**/
+    }                                                                            /**/
+                                                                                 /**/
+    .divider {                                                                   /**/
+      width: 10vw; /* Tamaño ajustable con vw */                                 /**/
+      height: 10vw; /* Mantiene el formato cuadrado */                           /**/
+      width: 100%; /*185px*/                                                     /**/
+      height: 100%; /*185px*/                                                    /**/
+      max-width: 150px; /* Evita que crezca demasiado en pantallas grandes */    /**/
+      max-height: 150px;                                                         /**/
+      border-radius: 10%; /*50%*/ /* Esquinas redondeadas */                     /**/
+      background-image: url("/sources/media/logotype.svg");                      /**/
+      background-size: cover;                                                    /**/
+      background-position: center;                                               /**/
+      position: absolute;                                                        /**/
+      top: 10%; /* Ajusta la posición sobre el texto */                          /**/
+    }                                                                            /**/
+                                                                                 /**/
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /*                                             MARCA                                              */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -128,15 +133,23 @@
     }
 
    @keyframes animarDegradado {
-      0% { background-position: 100% 50%; }
-      50% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; } /* Regresa al inicio para un bucle suave */
+      0%, 100% { 
+        background-position: 100% 50%;
+      } /* Regresa al inicio para un bucle suave */
+     
+      50% { 
+        background-position: 0% 50%;
+      }
     }
 
    @keyframes cambiarColores {
-      0% { filter: hue-rotate(0deg); }
-      50% { filter: hue-rotate(360deg); }
-      100% { filter: hue-rotate(0deg); } /* Regresa al inicio para un bucle suave */
+      0%, 100% { 
+        filter: hue-rotate(0deg); 
+      } /* Regresa al inicio para un bucle suave */
+     
+      50% { 
+        filter: hue-rotate(360deg); 
+      }
     }
 
     @keyframes animacionPuntos {
