@@ -44,11 +44,21 @@
       animation-delay: calc(var(--delay) * 0.1s);                                               /**/
       animation-timing-function: ease-in-out;                                                   /**/
       border-radius: 10%; /*50%*/ /* Esquinas redondeadas */                     /**/
+      border: 2px solid transparent; /*2px solid black*/ /* Borde negro de 2px */
+      border-image: linear-gradient(45deg, 
+        hsl(0, 100%, 50%), 
+        hsl(60, 100%, 50%), 
+        hsl(120, 100%, 50%), 
+        hsl(180, 100%, 50%), 
+        hsl(240, 100%, 50%), 
+        hsl(300, 100%, 50%)),    /**/
+        url('/sources/media/wallpaper.svg');
+      box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                   /**/
       background-image: url("/sources/media/logotype.svg");                      /**/
       background-size: cover;                                                    /**/
       background-position: center;                                               /**/
       position: absolute;                                                        /**/
-      Bottom: 60.75%; /* Ajusta la posición sobre el texto */                           /**/
+      Bottom: 60.8%; /* Ajusta la posición sobre el texto */                           /**/
     }                                                                            /**/
                                                                                  /**/
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -88,8 +98,13 @@
       text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                   /**/
       background-position: center;                                                              /**/
       background-blend-mode: overlay;                                                           /**/
-      background: linear-gradient(45deg, hsl(0, 100%, 50%), hsl(60, 100%, 50%),                 /**/
-        hsl(120, 100%, 50%), hsl(180, 100%, 50%), hsl(240, 100%, 50%), hsl(300, 100%, 50%)),    /**/
+      background: linear-gradient(45deg, 
+        hsl(0, 100%, 50%), 
+        hsl(60, 100%, 50%),                 /**/
+        hsl(120, 100%, 50%), 
+        hsl(180, 100%, 50%), 
+        hsl(240, 100%, 50%), 
+        hsl(300, 100%, 50%)),    /**/
         url('/sources/media/wallpaper.svg');                                                    /**/
       /* background-image: url('/sources/media/wallpaper.svg'); */                              /**/
       background-size: cover; /*200% 200%*/                                                     /**/
