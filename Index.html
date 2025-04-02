@@ -34,8 +34,6 @@
       align-items: center;                                                       /**/
       justify-content: center;                                                   /**/
       position: relative;                                                        /**/
-      /*Bottom: calc(38.8% + (60.8% - 30.8%)); /* Ajusta la posición sobre el texto */                           /**/
-      Bottom: 60.8%; /* Ajusta la posición sobre el texto */                           /**/
     }                                                                            /**/
                                                                                  /**/
     .divider {                                                                   /**/
@@ -52,6 +50,8 @@
       background-size: cover;                                                    /**/
       background-position: center;                                               /**/
       position: absolute;                                                        /**/
+      /*Bottom: calc(38.8% + (60.8% - 30.8%)); /* Ajusta la posición sobre el texto */                           /**/
+      Bottom: 60.8%; /* Ajusta la posición sobre el texto */                           /**/
     }                                                                            /**/
                                                                                  /**/
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -64,6 +64,7 @@
       Top: 60%;                                                                                 /**/
       left: 50%;                                                                                /**/
       transform: translate(-50%, -50%);                                                         /**/
+      Bottom: 30.8%; /*30.8*/ /* Ajusta la posición sobre el texto */                           /**/
     }                                                                                           /**/
                                                                                                 /**/
     #texto::before {                                                                            /**/
@@ -75,7 +76,6 @@
       height: 100%;                                                                             /**/
       z-index: -1;                                                                              /**/
       color: rgba(0, 0, 0, 0.2); /* Sombra ligera */                                            /**/
-      Bottom: 30.8%; /*30.8*/ /* Ajusta la posición sobre el texto */                           /**/
     }                                                                                           /**/
                                                                                                 /**/
     .letra {                                                                                    /**/
