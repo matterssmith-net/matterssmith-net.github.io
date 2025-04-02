@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="60">
+  <title id="page-title"></title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #00CDCD;
+      background-image: url("/sources/media/background.svg");
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100vh;      
+    }
+
+    #texto {
+      position: absolute;
+      display: flex;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #texto::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            color: rgba(0, 0, 0, 0.2); /* Sombra ligera */
+        }
+
+    .letra {
+      font-size: 9.75vw;
+      z-index: 1;
+      animation: animacionTexto 1.8s infinite, /*1.3s*/ cambiarColores 3.6s infinite linear, /*10s*/ animarDegradado 1.8s infinite linear; /*6s*/
+      animation-delay: calc(var(--delay) * 0.1s);
+      animation-timing-function: ease-in-out;
+      transform: translateY(0%);
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: transparent;
+      text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+      background-position: center;
+      background-blend-mode: overlay;
+      background: linear-gradient(45deg, hsl(0, 100%, 50%), hsl(60, 100%, 50%), hsl(120, 100%, 50%), hsl(180, 100%, 50%), hsl(240, 100%, 50%), hsl(300, 100%, 50%)), url('/sources/media/wallpaper.svg');
+      /* background-image: url('/sources/media/wallpaper.svg'); */
+      background-size: cover; /*200% 200%*/
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 2px black; /* Contorno negro */
+    }
+
+    #mensaje {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 1.8vw; /*font-size: 1.3vw;*/
+      color: white;
+      font-weight: bold;
+    }
+
+    #texto1 {
+      color: green;
+      margin-right: 0.5vw;
+    }
+
+    #texto2 {
+      color: rgb(159,31,239);
+      margin-right: 0.5vw;
+    }
+
+    #texto3 {
+    color: red;
+    visibility: hidden;
+    display: flex;
+    animation: animacionPuntos 20s steps(20, end) infinite;
+    animation-delay: calc(var(--delay) * 0.5s);
+  }
+
+  .title {
+    margin-top: 50px;
+  }
+
+  .title button {
+    background-color: rgb(191, 255, 191);
+    color: black;
+  }
+
+    @keyframes animacionTexto {
+      0%, 100% {
+        transform: translateY(0%); /*25%*/
+      }
+
+       50% {
+        transform: translateY(-50%); /*75%*/
+      }
+    }
+
+   @keyframes animarDegradado {
+      0% { background-position: 100% 50%; }
+      50% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; } /* Regresa al inicio para un bucle suave */
+    }
+
+   @keyframes cambiarColores {
+      0% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(360deg); }
+      100% { filter: hue-rotate(0deg); } /* Regresa al inicio para un bucle suave */
+    }
+
+    @keyframes animacionPuntos {
+      0%, 100% {
+        visibility: hidden;
+      }
+
+      50% {
+        visibility: visible;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="texto"></div>
+
+  <div id="mensaje">
+    <span id="texto1"></span>
+    <span id="texto2" data-text="texto2"></span>
+    <span id="texto3"></span>
+  </div>
+
+  <script>
+    var pageTitle = document.getElementById("page-title");
+
+    // Variables modificables
+    var identidad = "Neutro";
+
+    var mostrarTexto = true;
+    var mostrarTexto1 = true;
+    var mostrarTexto2 = true;
+    var mostrarTexto3 = true;
+
+    var delayModificarTexto = (6500 / 2);
+
+    var texto = "KEILA";
+    var texto1 = "© Network Live Mattersmith.";
+    var texto2;
+
+    var texto3; /*texto3 = ". . ."*/
+    var speedTexto3 = 400;
+    var dotsTexto3 = [];
+    var speedDotsTexto3 = 250;
+
+    // Generar letras dinámicamente
+    var textoDiv = document.getElementById('texto');
+    var texto1Span = document.getElementById('texto1');
+    var texto2Span = document.getElementById('texto2');
+    var texto3Span = document.getElementById('texto3');
+
+    function modificarTexto(texto) {
+      var texto = texto;
+      document.getElementById('texto').textContent = texto;
+    }
+    
+    function modificarTexto1(texto1) {
+      var texto1 = texto1;
+      document.getElementById('texto1').textContent = texto1;
+    }
+    
+    function modificarTexto2(texto2) {
+      var texto2 = texto2;
+      document.getElementById('texto2').textContent = texto2;
+    }
+    
+    function animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3) {
+      var texto3Span = document.getElementById('texto3');
+      var dotsTexto3 = dotsTexto3;
+      var index = 0;
+
+      setInterval(function() {
+        if (mostrarTexto3) {
+          texto3Span.textContent = dotsTexto3[index];
+          index = (index + 1) % dotsTexto3.length;
+        }
+      }, speedTexto3);
+    }
+
+    function modificarDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3) {
+      var modificarSpeedDotsTexto3 = modificarSpeedDotsTexto3;
+      var texto3 = "";
+      var dotsTexto3 = dotsTexto3;
+
+      animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3);
+    }
+
+    function modificarTexto3(texto3) {
+      var texto3 = texto3;
+      document.getElementById('texto3').textContent = texto3;
+      
+      function animacionTexto3() {
+        if (mostrarTexto3) {
+          for (var k = 1; k <= texto3.length; k++) {
+            dotsTexto3.push(texto3.substr(0, k));
+          }
+          dotsTexto3.push('');
+
+          animateDotsTexto3(speedTexto3, dotsTexto3);
+        }
+
+      }
+      animacionTexto3();
+    }
+
+    function modificarTextoConsola() {
+      modificarTexto2("© Mattercraft [1.0.25.04]");
+    
+      modificarTexto3(". . .");
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('page-title').textContent = texto;
+
+      modificarTextoConsola();
+    });
+
+    if (mostrarTexto) {
+      for (var i = 0; i < texto.length; i++) {
+        var letra = document.createElement("span");
+        letra.className = "letra";
+        letra.style.setProperty("--delay", i);
+        letra.textContent = texto[i];
+        textoDiv.appendChild(letra);
+      }
+    }
+
+    if (mostrarTexto1) {
+      var texto1Texto = document.createTextNode(texto1);
+      texto1Span.appendChild(texto1Texto);
+    }
+
+    if (mostrarTexto2) {
+      for (var j = 0; j < texto2.length; j++) {
+        var palabra = document.createElement("span");
+        palabra.textContent = texto2[j];
+        texto2Span.appendChild(palabra);
+
+        if (j !== texto2.length - 1) {
+          var espacio = document.createElement("span");
+          espacio.textContent = " ";
+          texto2Span.appendChild(espacio);
+        }
+      }
+    }
+
+    function AjustarTamanoTexto() {
+      var textoDiv = document.getElementById('texto');
+      var vw = window.innerWidth / 100;
+      textoDiv.style.fontSize = vw + 'vw';
+
+      var mensaje = document.getElementById('mensaje');
+      mensaje.style.fontSize = (vw * 0.2) + 'vw';
+    }
+
+    window.addEventListener('resize', AjustarTamanoTexto);
+    AjustarTamanoTexto();
+  </script>
+</body>
+</html>
