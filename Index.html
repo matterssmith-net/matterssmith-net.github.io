@@ -39,7 +39,7 @@
     .divider {                                                                   /**/
       width: 20vw; /* Tamaño ajustable con vw */                                 /**/
       height: 20vw; /* Mantiene el formato cuadrado */                           /**/
-      animation: animacionImagen 1.8s infinite, /*1.3s*/ cambiarColores 3.6s infinite linear,    /**/ 
+      animation: animacionImagen 0.1s infinite reverse, /*1.3s*/ cambiarColores 3.6s infinite linear,    /**/ 
         /*10s*/ animarDegradado 1.8s infinite linear; /*6s*/                                    /**/
       animation-delay: calc((var(--delay) * 0.1s) + 1s);                                               /**/
       animation-timing-function: ease-in-out;                                                   /**/
@@ -126,19 +126,19 @@
                                                /**/
     @keyframes animacionImagen {               /**/
       0%, 100% {                               /**/
-        transform: translateY(-1%);            /**/
+        transform: translateY(1%);            /**/
       }                                        /**/
                                                /**/
        25% {                                   /**/
-        transform: translateX(-1%);           /**/
+        transform: translateX(1%);           /**/
       }                                        /**/
 
        50% {                                   /**/
-        transform: translateY(1%);           /**/
+        transform: translateY(-1%);           /**/
       }                                        /**/
 
        75% {                                   /**/
-        transform: translateX(1%);           /**/
+        transform: translateX(-1%);           /**/
       }                                        /**/
     }                                          /**/
                                                /**/
