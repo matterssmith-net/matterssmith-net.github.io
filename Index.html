@@ -39,8 +39,10 @@
     .divider {                                                                   /**/
       width: 20vw; /* Tamaño ajustable con vw */                                 /**/
       height: 20vw; /* Mantiene el formato cuadrado */                           /**/
-      /*max-width: 185px; /* Evita que crezca demasiado en pantallas grandes */  /**/
-      /*max-height: 185px;                                                       /**/
+      animation: animacionTexto 1.8s infinite, /*1.3s*/ cambiarColores 3.6s infinite linear,    /**/ 
+        /*10s*/ animarDegradado 1.8s infinite linear; /*6s*/                                    /**/
+      animation-delay: calc(var(--delay) * 0.1s);                                               /**/
+      animation-timing-function: ease-in-out;                                                   /**/
       border-radius: 10%; /*50%*/ /* Esquinas redondeadas */                     /**/
       background-image: url("/sources/media/logotype.svg");                      /**/
       background-size: cover;                                                    /**/
