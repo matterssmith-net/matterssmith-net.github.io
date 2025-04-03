@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="60">
+  <title id="page-title"></title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #00CDCD;
+      background-image: url("/sources/media/background.svg");
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100vh;      
+    }
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*                                            LOGOTYPE                                            */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                /**/
+    #container {                                                                                /**/
+      width: 100vw;                                                                             /**/
+      height: 100vh;                                                                            /**/
+      display: flex;                                                                            /**/
+      /*flex-direction: column; /* Acomoda los elementos en columna */                          /**/ 
+      align-items: center;                                                                      /**/
+      justify-content: center;                                                                  /**/
+      position: relative;                                                                       /**/
+    }                                                                                           /**/
+                                                                                                /**/
+    .divider {                                                                                  /**/
+      margin-top: 50px;                                                                         /**/
+      width: 20vw; /* Tamaño ajustable con vw */                                                /**/
+      height: 20vw; /* Mantiene el formato cuadrado */                                          /**/
+      animation: animacionImagen 0.15s infinite, /*1.3s*/                                       /**/
+                 animarDegradado 1.8s infinite linear; /*6s*/                                   /**/
+      animation-delay: calc(var(--delay) * 0.1s);                                               /**/
+      animation-timing-function: ease-in-out;                                                   /**/
+      border-radius: 50%; /*10%*/ /* Esquinas redondeadas */                                    /**/
+      border: 2px solid black; /*2px solid transparent*/ /* Borde negro de 2px */               /**/
+      /*box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                  /**/
+      background-image: url("/sources/media/logotype.svg");                                     /**/
+      background-size: cover;                                                                   /**/
+      background-position: center;                                                              /**/
+      position: absolute;                                                                       /**/
+      /*Bottom: 55.8%; /* Ajusta la posición sobre el texto */                                  /**/
+    }                                                                                           /**/
+                                                                                                /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*                                             MARCA                                              */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                /**/
+    #texto {                                                                                    /**/
+      position: absolute;                                                                       /**/
+      display: flex;                                                                            /**/
+      Top: 50%;                                                                                 /**/
+      left: 50%;                                                                                /**/
+      transform: translate(-50%, -50%);                                                         /**/
+    }                                                                                           /**/
+                                                                                                /**/
+    /*#texto::before {                                                                          /**/
+      /*content: attr(data-text);                                                               /**/
+      /*position: absolute;                                                                     /**/
+      /*top: 0;                                                                                 /**/
+      /*left: 0;                                                                                /**/
+      /*width: 100%;                                                                            /**/
+      /*height: 100%;                                                                           /**/
+      /*z-index: -1;                                                                            /**/
+      /*color: rgba(0, 0, 0, 0.2); /* Sombra ligera */                                          /**/
+    /*}                                                                                         /**/
+                                                                                                /**/
+    .letra {                                                                                    /**/
+      margin-bottom: 50px;                                                                      /**/
+      font-size: 9.75vw; /*9.75vw*/                                                             /**/
+      z-index: 1;                                                                               /**/
+      animation: animacionTexto 1.8s infinite, /*1.3s*/                                         /**/
+                 cambiarColores 3.6s infinite linear, /*10s*/                                   /**/
+                 animarDegradado 1.8s infinite linear; /*6s*/                                   /**/
+      animation-delay: calc(var(--delay) * 0.1s);                                               /**/
+      animation-timing-function: ease-in-out;                                                   /**/
+      transform: translateY(0%);                                                                /**/
+      font-family: Arial, sans-serif;                                                           /**/
+      font-weight: bold;                                                                        /**/
+      color: transparent;                                                                       /**/
+      /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                 /**/
+      background-position: center;                                                              /**/
+      background-blend-mode: overlay;                                                           /**/
+      background: linear-gradient(45deg,                                                        /**/
+        hsl(0, 100%, 50%),                                                                      /**/
+        hsl(60, 100%, 50%),                                                                     /**/
+        hsl(120, 100%, 50%),                                                                    /**/
+        hsl(180, 100%, 50%),                                                                    /**/
+        hsl(240, 100%, 50%),                                                                    /**/
+        hsl(300, 100%, 50%)),                                                                   /**/
+        url('/sources/media/wallpaper.svg');                                                    /**/
+      /*background-image: url('/sources/media/wallpaper.svg');*/                                /**/
+      background-size: cover; /*200% 200%*/                                                     /**/
+      background-clip: text;                                                                    /**/
+      -webkit-background-clip: text;                                                            /**/
+      -webkit-text-stroke: 2px black; /* Contorno negro */                                      /**/
+    }                                                                                           /**/
+                                                                                                /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+    #mensaje {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 1.8vw; /*font-size: 1.3vw;*/
+      color: white;
+      font-weight: bold;
+    }
+
+  .title {
+    margin-top: 50px;
+  }
+
+  .title button {
+    background-color: rgb(191, 255, 191);
+    color: black;
+  }
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                        /**/
+    @keyframes animacionImagen {                                                                        /**/
+      0%, 100% {                                                                                        /**/
+        transform: translateX(-0.15%);                                                                  /**/
+        transform: translateY(0.15%);                                                                   /**/
+        /*box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        box-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        /*             -x    -y                                                                         / */
+      }                                                                                                 /**/
+                                                                                                        /**/
+       12.5% {                                                                                            /**/
+        transform: translateX(-0.10%);                                                                   /**/
+        transform: translateY(0.15%);                                                                   /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: -1.875px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       25% {                                                                                            /**/
+        transform: translateX(0.15%);                                                                   /**/
+        transform: translateY(0.15%);                                                                   /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        /*            +x    -y                                                                          / */
+      }                                                                                                 /**/
+                                                                                                        /**/
+       37.5% {                                                                                            /**/
+        transform: translateX(0.15%);                                                                   /**/
+        transform: translateY(-0.10%);                                                                   /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: 3.75px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       50% {                                                                                            /**/
+        transform: translateX(0.15%);                                                                   /**/
+        transform: translateY(-0.15%);                                                                  /**/
+        /*box-shadow: 7.5px -7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        box-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
+        /*            +x    +y                                                                          / */
+      }                                                                                                 /**/
+                                                                                                        /**/
+       62.5% {                                                                                            /**/
+        transform: translateX(-0.10%);                                                                   /**/
+        transform: translateY(-0.15%);                                                                   /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: -1.875px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       75% {                                                                                            /**/
+        transform: translateX(-0.15%);                                                                  /**/
+        transform: translateY(-0.15%);                                                                  /**/
+        /*box-shadow: -7.5px -7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
+        /*            -x    +y                                                                          / */
+      }                                                                                                 /**/
+                                                                                                        /**/
+       87.5% {                                                                                            /**/
+        transform: translateX(-0.10%);                                                                   /**/
+        transform: translateY(0.15%);                                                                   /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: -7.5px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                        /**/
+    @keyframes animacionTexto {                                                                         /**/
+      0%, 100% {                                                                                        /**/
+        transform: translateY(25%); /*25%*/                                                             /**/
+        /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        text-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       12.5% {                                                                                            /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        text-shadow: -1.875px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       25% {                                                                                            /**/
+        /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        text-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       37.5% {                                                                                            /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        text-shadow: 3.75px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       50% {                                                                                            /**/
+        transform: translateY(-25%); /*75%*/                                                            /**/
+        /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        text-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       62.5% {                                                                                            /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        text-shadow: -1.875px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       75% {                                                                                            /**/
+        /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       87.5% {                                                                                            /**/
+        /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        text-shadow: -7.5px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                        /**/
+   @keyframes animarDegradado {                                                                         /**/
+      0%, 100% {                                                                                        /**/
+        background-position: 100% 50%;                                                                  /**/
+      } /* Regresa al inicio para un bucle suave */                                                     /**/
+                                                                                                        /**/
+      50% {                                                                                             /**/
+        background-position: 0% 50%;                                                                    /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+   @keyframes cambiarColores {                                                                          /**/
+      0%, 100% {                                                                                        /**/
+        filter: hue-rotate(0deg);                                                                       /**/
+      } /* Regresa al inicio para un bucle suave */                                                     /**/
+                                                                                                        /**/
+      50% {                                                                                             /**/
+        filter: hue-rotate(360deg);                                                                     /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+    @keyframes animacionPuntos {                                                                        /**/
+      0%, 100% {                                                                                        /**/
+        visibility: hidden;                                                                             /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+      50% {                                                                                             /**/
+        visibility: visible;                                                                            /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="divider"></div>
+  </div>
+
+  <div id="texto"></div>
+
+  <div id="mensaje">
+</div>
+
+  <script>
+    var pageTitle = document.getElementById("page-title");
+
+    // Variables modificables
+    var identidad = "Neutro";
+
+    var mostrarTexto = true;
+    var delayModificarTexto = (6500 / 2);
+
+    var texto = "MATTERCRAFT";
+
+    var speedTexto3 = 400;
+    var dotsTexto3 = [];
+    var speedDotsTexto3 = 250;
+
+    // Generar letras dinámicamente
+    var textoDiv = document.getElementById('texto');
+
+    function modificarTexto(texto) {
+      var texto = texto;
+      document.getElementById('texto').textContent = texto;
+    }
+    
+    function animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3) {
+      var texto3Span = document.getElementById('texto3');
+      var dotsTexto3 = dotsTexto3;
+      var index = 0;
+
+      setInterval(function() {
+        if (mostrarTexto3) {
+          texto3Span.textContent = dotsTexto3[index];
+          index = (index + 1) % dotsTexto3.length;
+        }
+      }, speedTexto3);
+    }
+
+    function modificarDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3) {
+      var modificarSpeedDotsTexto3 = modificarSpeedDotsTexto3;
+      var texto3 = "";
+      var dotsTexto3 = dotsTexto3;
+
+      animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3);
+    }
+
+    function modificarTextoConsola() {
+      modificarTexto2("© Mattercraft [1.0.25.04]");
+    
+      modificarTexto3(". . .");
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('page-title').textContent = texto;
+
+      modificarTextoConsola();
+    });
+
+    if (mostrarTexto) {
+      for (var i = 0; i < texto.length; i++) {
+        var letra = document.createElement("span");
+        letra.className = "letra";
+        letra.style.setProperty("--delay", i);
+        letra.textContent = texto[i];
+        textoDiv.appendChild(letra);
+      }
+    }
+
+    function AjustarTamanoTexto() {
+      var textoDiv = document.getElementById('texto');
+      var vw = window.innerWidth / 100;
+      textoDiv.style.fontSize = vw + 'vw';
+
+      var mensaje = document.getElementById('mensaje');
+      mensaje.style.fontSize = (vw * 0.2) + 'vw';
+    }
+
+    window.addEventListener('resize', AjustarTamanoTexto);
+    AjustarTamanoTexto();
+  </script>
+</body>
+</html>
