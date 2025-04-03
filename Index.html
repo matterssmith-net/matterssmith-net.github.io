@@ -90,7 +90,7 @@
       font-family: Arial, sans-serif;                                                           /**/
       font-weight: bold;                                                                        /**/
       color: transparent;                                                                       /**/
-      text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                   /**/
+      /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                 /**/
       background-position: center;                                                              /**/
       background-blend-mode: overlay;                                                           /**/
       background: linear-gradient(45deg,                                                        /**/
@@ -138,28 +138,28 @@
       0%, 100% {                                                                                        /**/
         transform: translateY(0.15%);                                                                   /**/
         /*box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
-        box-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
         /*             -x    -y                                                                         / */
       }                                                                                                 /**/
                                                                                                         /**/
        25% {                                                                                            /**/
         transform: translateX(0.15%);                                                                   /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        box-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
         /*            +x    -y                                                                          / */
       }                                                                                                 /**/
                                                                                                         /**/
        50% {                                                                                            /**/
         transform: translateY(-0.15%);                                                                  /**/
         /*box-shadow: 7.5px -7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
-        box-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
         /*            +x    +y                                                                          / */
       }                                                                                                 /**/
                                                                                                         /**/
        75% {                                                                                            /**/
         transform: translateX(-0.15%);                                                                  /**/
         /*box-shadow: -7.5px -7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
-        box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
         /*            -x    +y                                                                          / */
       }                                                                                                 /**/
     }                                                                                                   /**/
@@ -169,12 +169,26 @@
     @keyframes animacionTexto {                                                                         /**/
       0%, 100% {                                                                                        /**/
         transform: translateY(25%); /*25%*/                                                             /**/
+        /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        text-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       25% {                                                                                            /**/
+        /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        text-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
       }                                                                                                 /**/
                                                                                                         /**/
        50% {                                                                                            /**/
         transform: translateY(-25%); /*75%*/                                                            /**/
+        /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        text-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
       }                                                                                                 /**/
     }                                                                                                   /**/
+                                                                                                        /**/
+       75% {                                                                                            /**/
+        /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+      }                                                                                                 /**/
                                                                                                         /**/
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
                                                                                                         /**/
