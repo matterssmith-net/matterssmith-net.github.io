@@ -150,81 +150,128 @@
   }
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                            animacionImagen                                             /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
                                                                                                         /**/
     @keyframes animacionImagen {                                                                        /**/
       0%, 100% {                                                                                        /**/
-        transform: translateX(-0.15%);                                                                  /**/
+        /*transform: translateX(-0.15%);                                                                /**/
         transform: translateY(0.15%);                                                                   /**/
+        /*             -x    -y                                                                         / */
+      }                                                                                                 /**/
+                                                                                                        /**/
+       12.5% {                                                                                          /**/
+        transform: translateX(-0.10%);                                                                  /**/
+        /*transform: translateY(0.15%);                                                                 /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       25% {                                                                                            /**/
+        transform: translateX(0.15%);                                                                   /**/
+        /*transform: translateY(0.15%);                                                                 /**/
+        /*            +x    -y                                                                          / */
+      }                                                                                                 /**/
+                                                                                                        /**/
+       37.5% {                                                                                          /**/
+        /*transform: translateX(0.15%);                                                                 /**/
+        transform: translateY(-0.10%);                                                                  /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       50% {                                                                                            /**/
+        /*transform: translateX(0.15%);                                                                 /**/
+        transform: translateY(-0.15%);                                                                  /**/
+        /*            +x    +y                                                                          / */
+      }                                                                                                 /**/
+                                                                                                        /**/
+       62.5% {                                                                                          /**/
+        transform: translateX(-0.10%);                                                                  /**/
+        /*transform: translateY(-0.15%);                                                                /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       75% {                                                                                            /**/
+        transform: translateX(-0.15%);                                                                  /**/
+        /*transform: translateY(-0.15%);                                                                /**/
+        /*            -x    +y                                                                          / */
+      }                                                                                                 /**/
+                                                                                                        /**/
+       87.5% {                                                                                          /**/
+        transform: translateX(-0.10%);                                                                  /**/
+        /*transform: translateY(0.15%);                                                                 /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                        /**/
+    @keyframes animacionSombraImagen {                                                                  /**/
+      0%, 100% {                                                                                        /**/
         /*box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
         box-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
         /*             -x    -y                                                                         / */
       }                                                                                                 /**/
                                                                                                         /**/
-       12.5% {                                                                                            /**/
-        transform: translateX(-0.10%);                                                                   /**/
-        transform: translateY(0.15%);                                                                   /**/
+       12.5% {                                                                                          /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        box-shadow: -1.875px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        box-shadow: -1.875px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                      /**/
       }                                                                                                 /**/
                                                                                                         /**/
        25% {                                                                                            /**/
-        transform: translateX(0.15%);                                                                   /**/
-        transform: translateY(0.15%);                                                                   /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
         box-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
         /*            +x    -y                                                                          / */
       }                                                                                                 /**/
                                                                                                         /**/
-       37.5% {                                                                                            /**/
-        transform: translateX(0.15%);                                                                   /**/
-        transform: translateY(-0.10%);                                                                   /**/
+       37.5% {                                                                                          /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
         box-shadow: 3.75px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
       }                                                                                                 /**/
                                                                                                         /**/
        50% {                                                                                            /**/
-        transform: translateX(0.15%);                                                                   /**/
-        transform: translateY(-0.15%);                                                                  /**/
         /*box-shadow: 7.5px -7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
         box-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
         /*            +x    +y                                                                          / */
       }                                                                                                 /**/
                                                                                                         /**/
-       62.5% {                                                                                            /**/
-        transform: translateX(-0.10%);                                                                   /**/
-        transform: translateY(-0.15%);                                                                   /**/
+       62.5% {                                                                                          /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
         box-shadow: -1.875px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
       }                                                                                                 /**/
                                                                                                         /**/
        75% {                                                                                            /**/
-        transform: translateX(-0.15%);                                                                  /**/
-        transform: translateY(-0.15%);                                                                  /**/
         /*box-shadow: -7.5px -7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
         box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
         /*            -x    +y                                                                          / */
       }                                                                                                 /**/
                                                                                                         /**/
-       87.5% {                                                                                            /**/
-        transform: translateX(-0.10%);                                                                   /**/
-        transform: translateY(0.15%);                                                                   /**/
+       87.5% {                                                                                          /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
         box-shadow: -7.5px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
       }                                                                                                 /**/
     }                                                                                                   /**/
                                                                                                         /**/
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                             animacionTexto                                             /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
                                                                                                         /**/
     @keyframes animacionTexto {                                                                         /**/
       0%, 100% {                                                                                        /**/
         transform: translateY(25%); /*25%*/                                                             /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       50% {                                                                                            /**/
+        transform: translateY(-25%); /*75%*/                                                            /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                        /**/
+    @keyframes animacionSombraTexto {                                                                   /**/
+      0%, 100% {                                                                                        /**/
         /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
         text-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
       }                                                                                                 /**/
                                                                                                         /**/
-       12.5% {                                                                                            /**/
+       12.5% {                                                                                          /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        text-shadow: -1.875px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        text-shadow: -1.875px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                     /**/
       }                                                                                                 /**/
                                                                                                         /**/
        25% {                                                                                            /**/
@@ -232,20 +279,19 @@
         text-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
       }                                                                                                 /**/
                                                                                                         /**/
-       37.5% {                                                                                            /**/
+       37.5% {                                                                                          /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        text-shadow: 3.75px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        text-shadow: 3.75px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
       }                                                                                                 /**/
                                                                                                         /**/
        50% {                                                                                            /**/
-        transform: translateY(-25%); /*75%*/                                                            /**/
         /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
         text-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
       }                                                                                                 /**/
                                                                                                         /**/
-       62.5% {                                                                                            /**/
+       62.5% {                                                                                          /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        text-shadow: -1.875px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        text-shadow: -1.875px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
       }                                                                                                 /**/
                                                                                                         /**/
        75% {                                                                                            /**/
@@ -253,12 +299,14 @@
         text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
       }                                                                                                 /**/
                                                                                                         /**/
-       87.5% {                                                                                            /**/
+       87.5% {                                                                                          /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        text-shadow: -7.5px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        text-shadow: -7.5px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
       }                                                                                                 /**/
     }                                                                                                   /**/
                                                                                                         /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                            animacionColores                                            /**/
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
                                                                                                         /**/
    @keyframes animarDegradado {                                                                         /**/
@@ -280,6 +328,10 @@
         filter: hue-rotate(360deg);                                                                     /**/
       }                                                                                                 /**/
     }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                            animacionPuntos                                             /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
                                                                                                         /**/
     @keyframes animacionPuntos {                                                                        /**/
       0%, 100% {                                                                                        /**/
