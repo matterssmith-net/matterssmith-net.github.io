@@ -22,37 +22,38 @@
       height: 100vh;      
     }
 
-/* /////////////////////////////////////////////////////////////////////////////// */
-/*                                    LOGOTYPE                                     */
-/* /////////////////////////////////////////////////////////////////////////////// */
-                                                                                 /**/
-    #container {                                                                 /**/
-      width: 100vw;                                                              /**/
-      height: 100vh;                                                             /**/
-      display: flex;                                                             /**/
-      /*flex-direction: column; /* Acomoda los elementos en columna */           /**/ 
-      align-items: center;                                                       /**/
-      justify-content: center;                                                   /**/
-      position: relative;                                                        /**/
-    }                                                                            /**/
-                                                                                 /**/
-    .divider {                                                                   /**/
-      width: 20vw; /* Tamaño ajustable con vw */                                 /**/
-      height: 20vw; /* Mantiene el formato cuadrado */                           /**/
-      animation: animacionImagen 0.15s infinite reverse, /*1.3s*/ /*cambiarColores 3.6s infinite linear,    /**/ 
-        /*10s*/ animarDegradado 1.8s infinite linear; /*6s*/                                    /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/*                                            LOGOTYPE                                            */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                /**/
+    #container {                                                                                /**/
+      width: 100vw;                                                                             /**/
+      height: 100vh;                                                                            /**/
+      display: flex;                                                                            /**/
+      /*flex-direction: column; /* Acomoda los elementos en columna */                          /**/ 
+      align-items: center;                                                                      /**/
+      justify-content: center;                                                                  /**/
+      position: relative;                                                                       /**/
+    }                                                                                           /**/
+                                                                                                /**/
+    .divider {                                                                                  /**/
+      margin-top: 50px;                                                                         /**/
+      width: 20vw; /* Tamaño ajustable con vw */                                                /**/
+      height: 20vw; /* Mantiene el formato cuadrado */                                          /**/
+      animation: animacionImagen 0.15s infinite reverse, /*1.3s*/                               /**/
+                 animarDegradado 1.8s infinite linear; /*6s*/                                   /**/
       animation-delay: calc(var(--delay) * 0.1s);                                               /**/
       animation-timing-function: ease-in-out;                                                   /**/
-      border-radius: 50%; /*10%*/ /* Esquinas redondeadas */                     /**/
-      border: 2px solid black; /*2px solid transparent*/ /* Borde negro de 2px */
-      box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                   /**/
-      background-image: url("/sources/media/logotype.svg");                      /**/
-      background-size: cover;                                                    /**/
-      background-position: center;                                               /**/
-      position: absolute;                                                        /**/
-      Bottom: 55.8%; /* Ajusta la posición sobre el texto */                           /**/
-    }                                                                            /**/
-                                                                                 /**/
+      border-radius: 50%; /*10%*/ /* Esquinas redondeadas */                                    /**/
+      border: 2px solid black; /*2px solid transparent*/ /* Borde negro de 2px */               /**/
+      box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                    /**/
+      background-image: url("/sources/media/logotype.svg");                                     /**/
+      background-size: cover;                                                                   /**/
+      background-position: center;                                                              /**/
+      position: absolute;                                                                       /**/
+      /*Bottom: 55.8%; /* Ajusta la posición sobre el texto */                                  /**/
+    }                                                                                           /**/
+                                                                                                /**/
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /*                                             MARCA                                              */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -77,10 +78,12 @@
     }                                                                                           /**/
                                                                                                 /**/
     .letra {                                                                                    /**/
+      margin-bottom: 50px;                                                                      /**/
       font-size: 9.75vw; /*9.75vw*/                                                             /**/
       z-index: 1;                                                                               /**/
-      animation: animacionTexto 1.8s infinite, /*1.3s*/ cambiarColores 3.6s infinite linear,    /**/ 
-        /*10s*/ animarDegradado 1.8s infinite linear; /*6s*/                                    /**/
+      animation: animacionTexto 1.8s infinite, /*1.3s*/                                         /**/
+                 cambiarColores 3.6s infinite linear, /*10s*/                                   /**/
+                 animarDegradado 1.8s infinite linear; /*6s*/                                   /**/
       animation-delay: calc(var(--delay) * 0.1s);                                               /**/
       animation-timing-function: ease-in-out;                                                   /**/
       transform: translateY(0%);                                                                /**/
@@ -90,13 +93,13 @@
       text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                   /**/
       background-position: center;                                                              /**/
       background-blend-mode: overlay;                                                           /**/
-      background: linear-gradient(45deg, 
-        hsl(0, 100%, 50%), 
-        hsl(60, 100%, 50%),                 /**/
-        hsl(120, 100%, 50%), 
-        hsl(180, 100%, 50%), 
-        hsl(240, 100%, 50%), 
-        hsl(300, 100%, 50%)),    /**/
+      background: linear-gradient(45deg,                                                        /**/
+        hsl(0, 100%, 50%),                                                                      /**/
+        hsl(60, 100%, 50%),                                                                     /**/
+        hsl(120, 100%, 50%),                                                                    /**/
+        hsl(180, 100%, 50%),                                                                    /**/
+        hsl(240, 100%, 50%),                                                                    /**/
+        hsl(300, 100%, 50%)),                                                                   /**/
         url('/sources/media/wallpaper.svg');                                                    /**/
       /* background-image: url('/sources/media/wallpaper.svg'); */                              /**/
       background-size: cover; /*200% 200%*/                                                     /**/
@@ -129,71 +132,71 @@
     color: black;
   }
 
-/* ///////////////////////////////////////////// */
-                                               /**/
-    @keyframes animacionImagen {               /**/
-      0%, 100% {                               /**/
-        transform: translateY(0.15%);            /**/
-      }                                        /**/
-                                               /**/
-       25% {                                   /**/
-        transform: translateX(0.15%);           /**/
-      }                                        /**/
-
-       50% {                                   /**/
-        transform: translateY(-0.15%);           /**/
-      }                                        /**/
-
-       75% {                                   /**/
-        transform: translateX(-0.15%);           /**/
-      }                                        /**/
-    }                                          /**/
-                                               /**/
-/* ////////////////////////////////////////////// */
-                                                /**/
-    @keyframes animacionTexto {                 /**/
-      0%, 100% {                                /**/
-        transform: translateY(25%); /*25%*/      /**/
-      }                                         /**/
-                                                /**/
-       50% {                                    /**/
-        transform: translateY(-25%); /*75%*/    /**/
-      }                                         /**/
-    }                                           /**/
-                                                /**/
-/* ///////////////////////////////////////////////////// */
-                                                       /**/
-   @keyframes animarDegradado {                        /**/
-      0%, 100% {                                       /**/
-        background-position: 100% 50%;                 /**/
-      } /* Regresa al inicio para un bucle suave */    /**/
-                                                       /**/
-      50% {                                            /**/
-        background-position: 0% 50%;                   /**/
-      }                                                /**/
-    }                                                  /**/
-                                                       /**/
-   @keyframes cambiarColores {                         /**/
-      0%, 100% {                                       /**/
-        filter: hue-rotate(0deg);                      /**/
-      } /* Regresa al inicio para un bucle suave */    /**/
-                                                       /**/
-      50% {                                            /**/
-        filter: hue-rotate(360deg);                    /**/
-      }                                                /**/
-    }                                                  /**/
-                                                       /**/
-    @keyframes animacionPuntos {                       /**/
-      0%, 100% {                                       /**/
-        visibility: hidden;                            /**/
-      }                                                /**/
-                                                       /**/
-      50% {                                            /**/
-        visibility: visible;                           /**/
-      }                                                /**/
-    }                                                  /**/
-                                                       /**/
-/* ///////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                        /**/
+    @keyframes animacionImagen {                                                                        /**/
+      0%, 100% {                                                                                        /**/
+        transform: translateY(0.15%);                                                                   /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       25% {                                                                                            /**/
+        transform: translateX(0.15%);                                                                   /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       50% {                                                                                            /**/
+        transform: translateY(-0.15%);                                                                  /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       75% {                                                                                            /**/
+        transform: translateX(-0.15%);                                                                  /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                        /**/
+    @keyframes animacionTexto {                                                                         /**/
+      0%, 100% {                                                                                        /**/
+        transform: translateY(25%); /*25%*/                                                             /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+       50% {                                                                                            /**/
+        transform: translateY(-25%); /*75%*/                                                            /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+                                                                                                        /**/
+   @keyframes animarDegradado {                                                                         /**/
+      0%, 100% {                                                                                        /**/
+        background-position: 100% 50%;                                                                  /**/
+      } /* Regresa al inicio para un bucle suave */                                                     /**/
+                                                                                                        /**/
+      50% {                                                                                             /**/
+        background-position: 0% 50%;                                                                    /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+   @keyframes cambiarColores {                                                                          /**/
+      0%, 100% {                                                                                        /**/
+        filter: hue-rotate(0deg);                                                                       /**/
+      } /* Regresa al inicio para un bucle suave */                                                     /**/
+                                                                                                        /**/
+      50% {                                                                                             /**/
+        filter: hue-rotate(360deg);                                                                     /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+    @keyframes animacionPuntos {                                                                        /**/
+      0%, 100% {                                                                                        /**/
+        visibility: hidden;                                                                             /**/
+      }                                                                                                 /**/
+                                                                                                        /**/
+      50% {                                                                                             /**/
+        visibility: visible;                                                                            /**/
+      }                                                                                                 /**/
+    }                                                                                                   /**/
+                                                                                                        /**/
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
   </style>
 </head>
