@@ -46,7 +46,7 @@
       animation-timing-function: ease-in-out;                                                   /**/
       border-radius: 50%; /*10%*/ /* Esquinas redondeadas */                                    /**/
       border: 2px solid black; /*2px solid transparent*/ /* Borde negro de 2px */               /**/
-      box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                    /**/
+      /*box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                  /**/
       background-image: url("/sources/media/logotype.svg");                                     /**/
       background-size: cover;                                                                   /**/
       background-position: center;                                                              /**/
@@ -61,21 +61,21 @@
     #texto {                                                                                    /**/
       position: absolute;                                                                       /**/
       display: flex;                                                                            /**/
-      Top: 60%;                                                                                 /**/
+      Top: 50%;                                                                                 /**/
       left: 50%;                                                                                /**/
       transform: translate(-50%, -50%);                                                         /**/
     }                                                                                           /**/
                                                                                                 /**/
-    #texto::before {                                                                            /**/
-      content: attr(data-text);                                                                 /**/
-      position: absolute;                                                                       /**/
-      top: 0;                                                                                   /**/
-      left: 0;                                                                                  /**/
-      width: 100%;                                                                              /**/
-      height: 100%;                                                                             /**/
-      z-index: -1;                                                                              /**/
-      color: rgba(0, 0, 0, 0.2); /* Sombra ligera */                                            /**/
-    }                                                                                           /**/
+    /*#texto::before {                                                                          /**/
+      /*content: attr(data-text);                                                               /**/
+      /*position: absolute;                                                                     /**/
+      /*top: 0;                                                                                 /**/
+      /*left: 0;                                                                                /**/
+      /*width: 100%;                                                                            /**/
+      /*height: 100%;                                                                           /**/
+      /*z-index: -1;                                                                            /**/
+      /*color: rgba(0, 0, 0, 0.2); /* Sombra ligera */                                          /**/
+    /*}                                                                                         /**/
                                                                                                 /**/
     .letra {                                                                                    /**/
       margin-bottom: 50px;                                                                      /**/
@@ -101,7 +101,7 @@
         hsl(240, 100%, 50%),                                                                    /**/
         hsl(300, 100%, 50%)),                                                                   /**/
         url('/sources/media/wallpaper.svg');                                                    /**/
-      /* background-image: url('/sources/media/wallpaper.svg'); */                              /**/
+      /*background-image: url('/sources/media/wallpaper.svg');*/                                /**/
       background-size: cover; /*200% 200%*/                                                     /**/
       background-clip: text;                                                                    /**/
       -webkit-background-clip: text;                                                            /**/
@@ -137,18 +137,22 @@
     @keyframes animacionImagen {                                                                        /**/
       0%, 100% {                                                                                        /**/
         transform: translateY(0.15%);                                                                   /**/
+        box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
       }                                                                                                 /**/
                                                                                                         /**/
        25% {                                                                                            /**/
         transform: translateX(0.15%);                                                                   /**/
+        box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
       }                                                                                                 /**/
                                                                                                         /**/
        50% {                                                                                            /**/
         transform: translateY(-0.15%);                                                                  /**/
+        box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
       }                                                                                                 /**/
                                                                                                         /**/
        75% {                                                                                            /**/
         transform: translateX(-0.15%);                                                                  /**/
+        box-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                          /**/
       }                                                                                                 /**/
     }                                                                                                   /**/
                                                                                                         /**/
