@@ -96,7 +96,7 @@
                  animarDegradado 1.8s infinite linear; /*6s*/                                   /**/
       animation-delay: calc(var(--delay) * 0.1s);                                               /**/
       animation-timing-function: ease-in-out;                                                   /**/
-      /*transform: translateY(0%);                                                                /**/
+      transform: translateY(0%);                                                                /**/
       font-family: Arial, sans-serif;                                                           /**/
       font-weight: bold;                                                                        /**/
       color: transparent;                                                                       /**/
@@ -136,7 +136,7 @@
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
     #mensaje {
-      position: relative;
+      position: absolute;
       bottom: 5%;
       left: 50%;
       /*transform: translateX(-50%);*/
@@ -163,47 +163,47 @@
                                                                                                         /**/
     @keyframes animacionImagen {                                                                        /**/
       0%, 100% {                                                                                        /**/
-        /*transform: translateX(-0.15%);                                                                /**/
+        transform: translateX(-0.15%); //                                                               /**/
         transform: translateY(0.15%);                                                                   /**/
         /*             -x    -y                                                                         / */
       }                                                                                                 /**/
                                                                                                         /**/
        12.5% {                                                                                          /**/
         transform: translateX(-0.10%);                                                                  /**/
-        /*transform: translateY(0.15%);                                                                 /**/
+        transform: translateY(0.15%); //                                                                /**/
       }                                                                                                 /**/
                                                                                                         /**/
        25% {                                                                                            /**/
         transform: translateX(0.15%);                                                                   /**/
-        /*transform: translateY(0.15%);                                                                 /**/
+        transform: translateY(0.15%); //                                                                /**/
         /*            +x    -y                                                                          / */
       }                                                                                                 /**/
                                                                                                         /**/
        37.5% {                                                                                          /**/
-        /*transform: translateX(0.15%);                                                                 /**/
+        transform: translateX(0.15%); //                                                                /**/
         transform: translateY(-0.10%);                                                                  /**/
       }                                                                                                 /**/
                                                                                                         /**/
        50% {                                                                                            /**/
-        /*transform: translateX(0.15%);                                                                 /**/
+        transform: translateX(0.15%); //                                                                /**/
         transform: translateY(-0.15%);                                                                  /**/
         /*            +x    +y                                                                          / */
       }                                                                                                 /**/
                                                                                                         /**/
        62.5% {                                                                                          /**/
         transform: translateX(-0.10%);                                                                  /**/
-        /*transform: translateY(-0.15%);                                                                /**/
+        transform: translateY(-0.15%); //                                                               /**/
       }                                                                                                 /**/
                                                                                                         /**/
        75% {                                                                                            /**/
         transform: translateX(-0.15%);                                                                  /**/
-        /*transform: translateY(-0.15%);                                                                /**/
+        transform: translateY(-0.15%); //                                                               /**/
         /*            -x    +y                                                                          / */
       }                                                                                                 /**/
                                                                                                         /**/
        87.5% {                                                                                          /**/
         transform: translateX(-0.10%);                                                                  /**/
-        /*transform: translateY(0.15%);                                                                 /**/
+        transform: translateY(0.15%); //                                                                /**/
       }                                                                                                 /**/
     }                                                                                                   /**/
                                                                                                         /**/
