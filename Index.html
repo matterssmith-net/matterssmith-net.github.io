@@ -55,10 +55,12 @@
     }                                                                                           /**/
                                                                                                 /**/
     .divider::before {                                                                          /**/
+      content: attr(data-text);                                                                 /**/
       content: ""; /* Creamos un pseudo-elemento vacío */                                       /**/
-      position: absolute;                                                                       /**/
-      /*top: 0;                                                                                   /**/
-      /*left: 0;                                                                                  /**/
+      position: relative;                                                                       /**/
+      top: 0;                                                                                   /**/
+      left: 0;                                                                                  /**/
+      color: transparent;                                                                       /**/
       /*width: 100%;                                                                              /**/
       /*height: 100%;                                                                             /**/
       animation: animacionSombraImagen 0.15s infinite; /*1.3s*/                                 /**/
@@ -113,10 +115,12 @@
     }                                                                                           /**/
                                                                                                 /**/
     .letra::before {                                                                            /**/
+      content: attr(data-text);                                                                 /**/
       content: ""; /* Creamos un pseudo-elemento vacío */                                       /**/
-      position: absolute;                                                                       /**/
-      /*top: 0;                                                                                   /**/
-      /*left: 0;                                                                                  /**/
+      position: relative;                                                                       /**/
+      top: 0;                                                                                   /**/
+      left: 0;                                                                                  /**/
+      color: transparent;                                                                       /**/
       /*width: 100%;                                                                              /**/
       /*height: 100%;                                                                             /**/
       animation: animacionSombraTexto 1.8s infinite; /*1.3s*/                                   /**/
