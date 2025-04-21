@@ -130,6 +130,24 @@
     color: black;
   }
 
+  @media screen and (orientation: portrait) {
+    #content {
+      display: none;
+    }
+    #rotate-notice {
+      display: block;
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    #content {
+      display: flex;
+    }
+    #rotate-notice {
+      display: none;
+    }
+  }
+
 /* ///////////////////////////////////////////// */
                                                /**/
     @keyframes animacionImagen {               /**/
@@ -233,14 +251,16 @@
   </style>
 </head>
 <body>
-  <div id="container">
-    <div class="divider"></div>
+  <div id="content">
+    <div id="container">
+      <div class="divider"></div>
+    </div>
+
+    <div id="texto"></div>
+
+    <div id="mensaje">
+    </div>
   </div>
-
-  <div id="texto"></div>
-
-  <div id="mensaje">
-</div>
 
   <script>
     var pageTitle = document.getElementById("page-title");
