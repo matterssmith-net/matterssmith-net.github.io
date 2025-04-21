@@ -130,21 +130,6 @@
     color: black;
   }
 
-    @media screen and (orientation: portrait) {
-      body {
-        display: none;
-      }
-      #rotate-notice {
-        display: block;
-      }
-    }
-
-    @media screen and (orientation: landscape) {
-      #rotate-notice {
-        display: none;
-      }
-    }
-
 /* ///////////////////////////////////////////// */
                                                /**/
     @keyframes animacionImagen {               /**/
@@ -247,9 +232,6 @@
 
   </style>
 </head>
-<div id="rotate-notice" style="display: none; text-align:center;">
-  Por favor, gira tu dispositivo para ver esta página en horizontal.
-</div>
 <body>
   <div id="container">
     <div class="divider"></div>
@@ -277,6 +259,15 @@
 
     // Generar letras dinámicamente
     var textoDiv = document.getElementById('texto');
+
+    function checkOrientation() {
+      if (window.innerHeight > window.innerWidth) {
+        document.getElementById('enterFullscreen').addEventListener('click', async () => {
+          await document.documentElement.requestFullscreen();
+          await screen.orientation.lock('landscape');
+        });
+      }
+    }
 
     function modificarTexto(texto) {
       var texto = texto;
@@ -335,8 +326,13 @@
       mensaje.style.fontSize = (vw * 0.2) + 'vw';
     }
 
-    window.addEventListener('resize', AjustarTamanoTexto);
-    AjustarTamanoTexto();
+    function InitialChecks() {
+      checkOrientation();
+      AjustarTamanoTexto();
+    }
+
+    window.addEventListener('load', InitialChecks);
+    window.addEventListener('resize', InitialChecks);
   </script>
 </body>
 </html>
