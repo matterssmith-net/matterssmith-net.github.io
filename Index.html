@@ -130,6 +130,21 @@
     color: black;
   }
 
+    @media screen and (orientation: portrait) {
+      body {
+        display: none;
+      }
+      #rotate-notice {
+        display: block;
+      }
+    }
+
+    @media screen and (orientation: landscape) {
+      #rotate-notice {
+        display: none;
+      }
+    }
+
 /* ///////////////////////////////////////////// */
                                                /**/
     @keyframes animacionImagen {               /**/
@@ -232,6 +247,9 @@
 
   </style>
 </head>
+<div id="rotate-notice" style="display: none; text-align:center;">
+  Por favor, gira tu dispositivo para ver esta página en horizontal.
+</div>
 <body>
   <div id="container">
     <div class="divider"></div>
