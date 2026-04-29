@@ -1,273 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="5; url=https://matterssmith-net.github.io/main">
-  <title id="page-title"></title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background-color: #00CDCD;
-      background-image: url("/sources/media/background.svg");
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      height: 100vh;      
-    }
-
-    #texto {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: Arial, sans-serif;
-      display: flex;
-      background-image: url('/sources/media/wallpaper.svg');
-      background-size: cover;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: rgb(127,127,127); /*color: transparent;*/
-      font-weight: bold;
-      background-position: center;
-    }
-
-    #texto::before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            color: rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>༄𝓝𝓮𝓽𝔀𝓸𝓻𝓴 𝓛𝓲𝓿𝓮</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #00CDCD;
+            background-image: url("/sources/media/background.svg");
+            background-size: cover;
         }
 
-    .letra {
-      font-size: 9.75vw;
-      animation: animacionTexto 1.8s infinite; /*animacionTexto 1.3s infinite*/
-      animation-delay: calc(var(--delay) * 0.1s);
-      animation-timing-function: ease-in-out;
-      transform: translateY(0%);
-    }
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    #mensaje {
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      font-size: 1.8vw; /*font-size: 1.3vw;*/
-      color: white;
-      font-weight: bold;
-    }
+        .block {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50%;
+            animation: orbit 6s linear infinite;
+        }
 
-    #texto1 {
-      color: green;
-      margin-right: 0.5vw;
-    }
+        #net, #live, #matter {            
+            color: #D9E2E2;
+        }
 
-    #texto2 {
-      color: rgb(159,31,239);
-      margin-right: 0.5vw;
-    }
+        #net {
+            background-color: #3f3ab1;
+            font-size: 2em;
+        }
 
-    #texto3 {
-    color: red;
-    visibility: hidden;
-    display: flex;
-    animation: animacionPuntos 20s steps(20, end) infinite;
-    animation-delay: calc(var(--delay) * 0.5s);
-  }
+        #live {
+            background-color: #39b13f;
+            font-size: 1.75em;
+        }
 
-  .title {
-    margin-top: 50px;
-  }
+        #space {
+            color: #8A8A8A;
+            background-color: #555555;
+            background-image: url("/sources/media/wallpaper.svg");
+            font-size: 1.25em;
+        }
 
-  .title button {
-    background-color: rgb(191, 255, 191);
-    color: black;
-  }
+        #matter {
+            background-color: #000000;
+            font-size: 1.125em;
+        }
+        
+        .divider {
+            position: absolute;
+            width: 185px;
+            height: 185px;
+            border-radius: 50%;
+            background-image: url("/sources/media/logotype.svg");
+            background-size: cover;
+            background-position: center;
+        }
 
-    @keyframes animacionTexto {
-      0%, 100% {
-        transform: translateY(0%); /*25%*/
-      }
+        #net { animation-delay: 1.5s; }
+        #live { animation-delay: 3s; }
+        #space { animation-delay: 4.5s; }
+        #matter { animation-delay: 6s; }
 
-       50% {
-        transform: translateY(-50%); /*75%*/
-      }
-    }
-
-    @keyframes animacionPuntos {
-      0%, 100% {
-        visibility: hidden;
-      }
-
-      50% {
-        visibility: visible;
-      }
-    }
-  </style>
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(135px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(135px) rotate(-360deg);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="texto"></div>
+    <div id="container">
+        <div id="matter" class="block">Matter</div>
+        <div id="space" class="block">Space</div>
+        <div id="live" class="block">Live</div>
+        <div id="net" class="block">Net</div>
+        <div class="divider"></div>
+        <br><br><br>
+        <t>༄𝓝𝓮𝓽𝔀𝓸𝓻𝓴 𝓛𝓲𝓿𝓮</t>
+    </div>
 
-  <div id="mensaje">
-    <span id="texto1"></span>
-    <span id="texto2" data-text="texto2"></span>
-    <span id="texto3"></span>
-  </div>
-
-  <script>
-    var pageTitle = document.getElementById("page-title");
-
-    // Variables modificables
-    var identidad = "Neutro";
-
-    var mostrarTexto = true;
-    var mostrarTexto1 = true;
-    var mostrarTexto2 = true;
-    var mostrarTexto3 = true;
-
-    var delayModificarTexto = (6500 / 2);
-
-    var texto = "MATTERCRAFT";
-    var texto1 = "© Network Live Mattersmith.";
-    var texto2;
-
-    var texto3; /*texto3 = ". . ."*/
-    var speedTexto3 = 400;
-    var dotsTexto3 = [];
-    var speedDotsTexto3 = 250;
-
-    // Generar letras dinámicamente
-    var textoDiv = document.getElementById('texto');
-    var texto1Span = document.getElementById('texto1');
-    var texto2Span = document.getElementById('texto2');
-    var texto3Span = document.getElementById('texto3');
-
-    function modificarTexto(texto) {
-      var texto = texto;
-      document.getElementById('texto').textContent = texto;
-    }
-    
-    function modificarTexto1(texto1) {
-      var texto1 = texto1;
-      document.getElementById('texto1').textContent = texto1;
-    }
-    
-    function modificarTexto2(texto2) {
-      var texto2 = texto2;
-      document.getElementById('texto2').textContent = texto2;
-    }
-    
-    function animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3) {
-      var texto3Span = document.getElementById('texto3');
-      var dotsTexto3 = dotsTexto3;
-      var index = 0;
-
-      setInterval(function() {
-        if (mostrarTexto3) {
-          texto3Span.textContent = dotsTexto3[index];
-          index = (index + 1) % dotsTexto3.length;
-        }
-      }, speedTexto3);
-    }
-
-    function modificarDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3) {
-      var modificarSpeedDotsTexto3 = modificarSpeedDotsTexto3;
-      var texto3 = "";
-      var dotsTexto3 = dotsTexto3;
-
-      animateDotsTexto3(modificarSpeedDotsTexto3, dotsTexto3);
-    }
-
-    function modificarTexto3(texto3) {
-      var texto3 = texto3;
-      document.getElementById('texto3').textContent = texto3;
-      
-      function animacionTexto3() {
-        if (mostrarTexto3) {
-          for (var k = 1; k <= texto3.length; k++) {
-            dotsTexto3.push(texto3.substr(0, k));
-          }
-          dotsTexto3.push('');
-
-          animateDotsTexto3(speedTexto3, dotsTexto3);
-        }
-
-      }
-      animacionTexto3();
-    }
-
-    function modificarTextoConsola() {
-      modificarTexto2("© Mattercraft [1.0.25.03]");
-    
-      modificarTexto3(". . .");
-
-    /*
-      setTimeout(function() {
-        location.reload();
-      }, (1600 * 10));
-    */
-
-    }
-    
-    document.addEventListener("DOMContentLoaded", function() {
-      document.getElementById('page-title').textContent = texto;
-
-      modificarTextoConsola();
-    });
-
-    if (mostrarTexto) {
-      for (var i = 0; i < texto.length; i++) {
-        var letra = document.createElement("span");
-        letra.className = "letra";
-        letra.style.setProperty("--delay", i);
-        letra.textContent = texto[i];
-        textoDiv.appendChild(letra);
-      }
-    }
-
-    if (mostrarTexto1) {
-      var texto1Texto = document.createTextNode(texto1);
-      texto1Span.appendChild(texto1Texto);
-    }
-
-    if (mostrarTexto2) {
-      for (var j = 0; j < texto2.length; j++) {
-        var palabra = document.createElement("span");
-        palabra.textContent = texto2[j];
-        texto2Span.appendChild(palabra);
-
-        if (j !== texto2.length - 1) {
-          var espacio = document.createElement("span");
-          espacio.textContent = " ";
-          texto2Span.appendChild(espacio);
-        }
-      }
-    }
-
-    function AjustarTamanoTexto() {
-      var textoDiv = document.getElementById('texto');
-      var vw = window.innerWidth / 100;
-      textoDiv.style.fontSize = vw + 'vw';
-
-      var mensaje = document.getElementById('mensaje');
-      mensaje.style.fontSize = (vw * 0.2) + 'vw';
-    }
-    
-    window.addEventListener('resize', AjustarTamanoTexto);
-    AjustarTamanoTexto();
-  </script>
+    <script>
+        // Optional JavaScript code can go here
+        setTimeout(() => { 
+           location.reload();
+        }, 50000);
+    </script>
 </body>
 </html>
