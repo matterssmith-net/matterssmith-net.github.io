@@ -78,10 +78,11 @@
     }                                                                                           /**/
                                                                                                 /**/
     .letra {                                                                                    /**/
+      --r:7.5px;
       font-size: 9.75vw; /*9.75vw*/                                                             /**/
       z-index: 1;                                                                               /**/
       animation: animacionTexto 1.8s infinite, /*1.3s*/ cambiarColores 3.6s infinite linear,    /**/ 
-        /*10s*/ animarDegradado 1.8s infinite linear; /*6s*/                                    /**/
+        /*10s*/ animarDegradado 1.8s infinite linear, /*6s*/ giro 1.8s linear infinite;         /**/
       animation-delay: calc(var(--delay) * 0.1s);                                               /**/
       animation-timing-function: ease-in-out;                                                   /**/
       transform: translateY(0%);                                                                /**/
@@ -154,48 +155,60 @@
       0%, 100% {                                                                                        /**/
         transform: translateY(25%); /*25%*/                                                             /**/
         /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
-        text-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        /**text-shadow: -7.5px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
       }                                                                                                 /**/
                                                                                                         /**/
        12.5% {                                                                                            /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        text-shadow: -1.875px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        /**text-shadow: -1.875px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
       }                                                                                                 /**/
                                                                                                         /**/
        25% {                                                                                            /**/
         /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
-        text-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
+        /**text-shadow: 3.75px -3.75px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
       }                                                                                                 /**/
                                                                                                         /**/
        37.5% {                                                                                            /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        text-shadow: 3.75px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        /**text-shadow: 3.75px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
       }                                                                                                 /**/
                                                                                                         /**/
        50% {                                                                                            /**/
         transform: translateY(-25%); /*75%*/                                                            /**/
         /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
-        text-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        /**text-shadow: 3.75px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
       }                                                                                                 /**/
                                                                                                         /**/
        62.5% {                                                                                            /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        text-shadow: -1.875px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        /**text-shadow: -1.875px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
       }                                                                                                 /**/
                                                                                                         /**/
        75% {                                                                                            /**/
         /*text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                       /**/
-        text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
+        /**text-shadow: -7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
       }                                                                                                 /**/
                                                                                                         /**/
        87.5% {                                                                                            /**/
         /*box-shadow: 7.5px 7.5px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                         /**/
-        text-shadow: -7.5px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
+        /**text-shadow: -7.5px 1.875px 0.3px rgba(0, 0, 0, 0.3); /* Sombra ligera */                        /**/
       }                                                                                                 /**/
     }                                                                                                   /**/
                                                                                                         /**/
 /* /////////////////////////////////////////////////////  /////////////////////////////////////////////// */
                                                        /**/
+   @keyframes giro{
+      from{ --a:0deg; }
+      to{ --a:360deg; }
+   }
+    
+    .letra{
+  text-shadow:
+    calc(cos(var(--a))*var(--r))
+    calc(sin(var(--a))*var(--r))
+    0 rgba(0,0,0,.3);
+}
+    
    @keyframes animarDegradado {                        /**/
       0%, 100% {                                       /**/
         background-position: 100% 50%;                 /**/
