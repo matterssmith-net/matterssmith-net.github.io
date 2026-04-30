@@ -150,19 +150,22 @@
 
 /* /////////////////////////////////////////////  /////////////////////////////////////////////////////// */
                                                                                                         /**/
-    @keyframes animacionTexto {   
-       0% { 
-       transform: rotate(0deg); 
-       text-shadow:-7.5px 7.5px 0.3px rgba(0,0,0,0.3); 
-      }
-      50% {                                                                                            /**/
-      }                                                                                                 /**/
-      100% { 
-       transform: rotate(360deg); 
-       text-shadow:-7.5px 7.5px 0.3px rgba(0,0,0,0.3); 
-      }         
-                                                                                                        /**/
-    }                                                                                                   /**/
+    @keyframes animacionTexto {
+       0%, 100%   { 
+         transform: translateY(25%); /*25%*/ 
+         text-shadow: -7.5px 7.5px 0.3px rgba(0,0,0,0.3); 
+       }
+       25%  { 
+         text-shadow: 7.5px 7.5px 0.3px rgba(0,0,0,0.3); 
+       }
+       50%  { 
+         transform: translateY(-25%); /*75%*/ 
+         text-shadow: 7.5px -7.5px 0.3px rgba(0,0,0,0.3); 
+       }
+       75%  { 
+         text-shadow: -7.5px -7.5px 0.3px rgba(0,0,0,0.3); 
+       }
+    }
                                                                                                         /**/
 /* /////////////////////////////////////////////////////  /////////////////////////////////////////////// */
                                                        /**/
